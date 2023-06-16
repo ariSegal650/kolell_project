@@ -1,3 +1,6 @@
+using System.ComponentModel.DataAnnotations;
+using MySql.Data.MySqlClient;
+
 namespace server.EO
 {
     public class Member_profileEO
@@ -12,7 +15,7 @@ namespace server.EO
         public string? passwordSalt { get; set; }
         public string? first_name { get; set; }
         public string? last_name { get; set; }
-        public int zip_code { get; set; }
+        public int? zip_code { get; set; }
         public string? country { get; set; }
         public int rating_number_votes { get; set; }
         public int rating_total_points { get; set; }
@@ -34,11 +37,13 @@ namespace server.EO
         public string? fav_movies { get; set; }
         public string? fav_music { get; set; }
         public string? current_city { get; set; }
+        
+          [Key]
         public int user_id { get; set; }
         public string? confirm_email_code { get; set; }
         public string? account_status { get; set; }
         public string? random_code { get; set; }
-        public DateTime date_created { get; set; }
+        public DateTime? date_created { get; set; }
         public int moderator { get; set; }
         public int flag_counter { get; set; }
 

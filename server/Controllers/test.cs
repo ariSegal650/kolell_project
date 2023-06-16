@@ -15,13 +15,14 @@ namespace server.Controllers
          private DataContext _Context { get; }
         public test(DataContext context)
         {
-            
+            _Context=context;
         }
 
         [HttpGet]
        public IActionResult test1()
        {
-            return Ok(_Context.videos);
+           // return Ok(_Context.sub_channels.Take(20).ToList());
+            return Ok(_Context.member_profile.Take(4).ToList());
        }
     }
 }

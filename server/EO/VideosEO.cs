@@ -1,12 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace server.EO
 {
     public class VideosEO
     {
+        [Key]
         public int indexer { get; set; }
         public string? video_id { get; set; }
         public string type { get; set; }=string.Empty;
@@ -24,17 +22,17 @@ namespace server.EO
         public DateTime? date_uploaded { get; set; }
         public string? location_recorded { get; set; }
         public string? video_length { get; set; }
-        public Boolean? allow_comments { get; set; }
-        public Boolean? allow_embedding { get; set; }
-        public Boolean? allow_ratings { get; set; }
+        public string? allow_comments { get; set; }
+        public string? allow_embedding { get; set; }
+        public string? allow_ratings { get; set; }
         public int? rating_number_votes { get; set; }
         public int? rating_total_points { get; set; }
         public int? updated_rating { get; set; }
         public string? public_private { get; set; }
         public string? approved { get; set; }
         public int? number_of_views { get; set; }
-        public Boolean? featured { get; set; }
-        public Boolean promoted { get; set; }
+        public string? featured { get; set; }
+        public string promoted { get; set; }=string.Empty;
         public int flag_counter { get; set; }
         public string video_type { get; set; }=string.Empty;
         public string? embed_id { get; set; }

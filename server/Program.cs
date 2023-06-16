@@ -1,4 +1,3 @@
-using server.EO;
 using Microsoft.EntityFrameworkCore;
 using server.Data;
 
@@ -14,13 +13,19 @@ try
 {
     builder.Services.AddDbContext<DataContext>(opt=>
     {
-        opt.UseMySQL(builder.Configuration.GetConnectionString("Default"));
-    });
+       // opt.UseMySql(builder.Configuration.GetConnectionString("Default"));
+        opt.UseMySql(builder.Configuration.GetConnectionString("Default") ,new MySqlServerVersion(new Version(10, 1, 40)));
+        // .EnableSensitiveDataLogging()
+        //         .EnableDetailedErrors();
+    }); 
+    
+
+     Console.WriteLine("database sucseeeesss");
 }
 catch (System.Exception)
 {
 
-    System.Console.WriteLine("database errrrororororor");
+    Console.WriteLine("database errrrororororor");
     throw;
 }
 builder.Services.AddCors();
