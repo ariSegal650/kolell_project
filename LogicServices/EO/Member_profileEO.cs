@@ -1,7 +1,6 @@
 using System.ComponentModel.DataAnnotations;
-using MySql.Data.MySqlClient;
 
-namespace server.EO
+namespace LogicServices.EO
 {
     public class Member_profileEO
     {

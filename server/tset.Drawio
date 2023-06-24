@@ -1,62 +1,65 @@
 <mxfile host="65bd71144e">
     <diagram id="63sRWwK-0opb3XabG4Bb" name="Page-1">
-        <mxGraphModel dx="1055" dy="598" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="996" dy="568" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;sql&lt;/font&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+                <mxCell id="2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;sql&lt;/font&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
                     <mxGeometry x="670" y="750" width="60" height="90" as="geometry"/>
                 </mxCell>
-                <mxCell id="23" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=16;" edge="1" parent="1" source="8">
+                <mxCell id="23" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=16;" parent="1" source="8" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="700.2857142857142" y="700" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="25" value="" style="edgeStyle=none;html=1;fontSize=16;" edge="1" parent="1" source="8">
+                <mxCell id="25" value="" style="edgeStyle=none;html=1;fontSize=16;" parent="1" source="8" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="700" y="710" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="8" value="data&amp;nbsp;" style="swimlane;whiteSpace=wrap;html=1;fontSize=16;startSize=23;" vertex="1" parent="1">
+                <mxCell id="8" value="data&amp;nbsp;" style="swimlane;whiteSpace=wrap;html=1;fontSize=16;startSize=23;" parent="1" vertex="1">
                     <mxGeometry x="600" y="160" width="200" height="480" as="geometry"/>
                 </mxCell>
-                <mxCell id="11" value="get last videos" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="8">
+                <mxCell id="11" value="get last videos" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" parent="8" vertex="1">
                     <mxGeometry x="20" y="40" width="160" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="12" value="get videos by category" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="8">
+                <mxCell id="12" value="get videos by category" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" parent="8" vertex="1">
                     <mxGeometry x="20" y="120" width="160" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="17" value="download&amp;nbsp; video/audio" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="8">
+                <mxCell id="17" value="download&amp;nbsp; video/audio" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" parent="8" vertex="1">
                     <mxGeometry x="20" y="280" width="160" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="19" value="get video by&amp;nbsp;manual setting" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="8">
+                <mxCell id="19" value="get video by&amp;nbsp;manual setting" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" parent="8" vertex="1">
                     <mxGeometry x="20" y="200" width="160" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="20" value="upload videos&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="8">
+                <mxCell id="20" value="upload videos&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" parent="8" vertex="1">
                     <mxGeometry x="20" y="360" width="160" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="9" value="authentication&amp;nbsp;" style="swimlane;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                <mxCell id="9" value="authentication&amp;nbsp;" style="swimlane;whiteSpace=wrap;html=1;fontSize=16;" parent="1" vertex="1">
                     <mxGeometry x="320" y="160" width="200" height="360" as="geometry"/>
                 </mxCell>
-                <mxCell id="18" value="identify manager" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="9">
+                <mxCell id="18" value="identify manager" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" parent="9" vertex="1">
                     <mxGeometry x="30" y="40" width="140" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="24" value="new&amp;nbsp;manager" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="9">
+                <mxCell id="24" value="new&amp;nbsp;manager" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" parent="9" vertex="1">
                     <mxGeometry x="30" y="120" width="140" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="10" value="owner" style="swimlane;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+                <mxCell id="10" value="owner" style="swimlane;whiteSpace=wrap;html=1;fontSize=16;" parent="1" vertex="1">
                     <mxGeometry x="40" y="160" width="200" height="200" as="geometry"/>
                 </mxCell>
-                <mxCell id="26" value="message service" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="10">
+                <mxCell id="26" value="message service" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" parent="10" vertex="1">
                     <mxGeometry x="20" y="40" width="160" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="27" value="design home page" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="10">
+                <mxCell id="27" value="design home page" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" parent="10" vertex="1">
                     <mxGeometry x="20" y="120" width="160" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="21" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;fontSize=16;" edge="1" parent="1" source="20">
+                <mxCell id="21" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;fontSize=16;" parent="1" source="20" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="530" y="480" as="targetPoint"/>
                     </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;api&lt;/font&gt;" style="swimlane;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=20;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="100" width="810" height="580" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

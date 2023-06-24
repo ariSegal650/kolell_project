@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using server.EO;
+using LogicServices.EO;
 
-namespace server.Data
+namespace LogicServices.Data
 {
     public class DataContext : DbContext
     {

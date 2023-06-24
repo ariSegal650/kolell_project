@@ -1,6 +1,12 @@
+# global folders
+.vs
+.vscode
+
+# folders server side
 bin
 obj
 
 # files
 appsettings.json
 appsettings.Development.json
+

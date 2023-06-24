@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace server.EO
+namespace LogicServices.EO
 {
     public class VideosEO
     {

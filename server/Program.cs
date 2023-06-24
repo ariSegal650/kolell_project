@@ -1,5 +1,6 @@
+using LogicServices.Data;
+using LogicServices.Services;
 using Microsoft.EntityFrameworkCore;
-using server.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,23 +10,18 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<DataService>();
 try
 {
-    builder.Services.AddDbContext<DataContext>(opt=>
+    builder.Services.AddDbContext<DataContext>(db=>
     {
-       // opt.UseMySql(builder.Configuration.GetConnectionString("Default"));
-        opt.UseMySql(builder.Configuration.GetConnectionString("Default") ,new MySqlServerVersion(new Version(10, 1, 40)));
+        db.UseMySql(builder.Configuration.GetConnectionString("Default") ,new MySqlServerVersion(new Version(10, 1, 40)));
         // .EnableSensitiveDataLogging()
         //         .EnableDetailedErrors();
     }); 
-    
-
-     Console.WriteLine("database sucseeeesss");
 }
 catch (System.Exception)
 {
-
-    Console.WriteLine("database errrrororororor");
     throw;
 }
 builder.Services.AddCors();
