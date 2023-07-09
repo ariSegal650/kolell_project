@@ -1,0 +1,19 @@
+export class video_parameters{
+    public indexer?: number;
+    public video_id?: string;
+    public channel_id?: number;
+    public sub_channel_id?: number;
+    public title?: string;
+    public description?: string;
+    public tags?: string;
+    public channel?: string;
+    public date_uploaded?: Date;
+    public video_length?: string;
+    public number_of_views?: number;
+    public channel_name?: string;
+    public channel_name_seo?: string;
+    public channel_description?: string;
+    public last_name?: string;
+    public first_name?: string;
+    public user_id?: number;
+}

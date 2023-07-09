@@ -1,12 +1,7 @@
-using System;
 using LogicServices.Data;
 using LogicServices.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using MyFirstCoreApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);

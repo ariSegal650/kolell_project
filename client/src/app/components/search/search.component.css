@@ -1,0 +1,18 @@
+.all{
+    margin-top: 50px;
+    display: grid;
+    height: 100vh;
+}
+.header{
+    height: fit-content;
+    justify-self: end;
+    margin: 0 15px;
+}
+.footer{
+    display: grid;
+    /* align-items: center; */
+    align-self: end;
+}
+p-splitbutton::ng-deep .p-button-raised::ng-deep p-tieredmenu::ng-deep .ng-trigger{
+    left: -30px !important;
+} 

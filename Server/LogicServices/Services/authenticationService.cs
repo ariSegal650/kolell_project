@@ -1,32 +1,32 @@
-
 using System;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
+using System.Text;
+using LogicServices.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.IdentityModel.Tokens;
 
-namespace MyFirstCoreApp.Services
+namespace LogicServices.Services
 {
-    public class JwtService
+    public class AuthenticationService
     {
+        private readonly DataContext _DataContext;
+
         private static string JwtSecretSign = "ProEMLh5e_qnzdNUQrqdHPgp";
         private static string JwtSecretDecrypt = "ProEMLh5e_qnzdNU";
-        private TimeSpan TokenNumMinutesToExtend = new TimeSpan(1, 1, 0);
-        private TimeSpan TokenMaxMinutesSession = new TimeSpan(2, 0, 0);
-
-        public const string TokenPrimaryKey = "UserId";
         public static SymmetricSecurityKey JwtSymmetricSecurityIssuerSigningKey => new SymmetricSecurityKey(System.Text.Encoding.ASCII.GetBytes(JwtSecretSign));
         public static SymmetricSecurityKey JwtSymmetricSecurityTokenDecryptionKey => new SymmetricSecurityKey(System.Text.Encoding.ASCII.GetBytes(JwtSecretDecrypt));
 
         public IHttpContextAccessor HttpContextAccessor { get; }
-        public HttpRequest Request => HttpContextAccessor.HttpContext?.Request;
+        public HttpRequest? Request => HttpContextAccessor?.HttpContext?.Request;
 
-        public JwtService(IHttpContextAccessor http)
+        public AuthenticationService(DataContext dataContext,IHttpContextAccessor http)
         {
-            HttpContextAccessor = http;
+            _DataContext = dataContext;
+             HttpContextAccessor = http;
         }
-        //החלק שאוכף את הטוקן והוא מוגדר בstartup.cs
+
+         //החלק שאוכף את הטוקן והוא מוגדר בstartup.cs
         public static TokenValidationParameters TokenValidationParameters => new TokenValidationParameters()
         {
             ValidateIssuerSigningKey = true,
@@ -39,23 +39,21 @@ namespace MyFirstCoreApp.Services
             RequireExpirationTime = true,
             ClockSkew = TimeSpan.Zero
         };
-
-        //החלק שמחולל את המפתח -הטוקן
-        public string GenerateToken(string tokenPrimaryValue,bool Admin)
+        
+        public string GenerateToken(int id)
         {
-            DateTime expired = DateTime.Now.Add(TokenNumMinutesToExtend);
+            string secretKey = "your-secret-key";
+            var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
+
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Issuer = "issuer",
-                Audience = "Audience",
                 Subject = new ClaimsIdentity(new[]
                 {
-                    new Claim(TokenPrimaryKey, tokenPrimaryValue),
-                    new Claim(ClaimTypes.Role, Admin ?  "Admin" : "BaseUser")
+                  new Claim("userId", id.ToString()),
+                  new Claim("role", "admin")
                 }),
-                Expires = expired,
-                SigningCredentials = new SigningCredentials(JwtSymmetricSecurityIssuerSigningKey, SecurityAlgorithms.HmacSha512),
-                EncryptingCredentials = new EncryptingCredentials(JwtSymmetricSecurityTokenDecryptionKey, SecurityAlgorithms.Aes128KW, SecurityAlgorithms.Aes128CbcHmacSha256)
+                Expires = DateTime.UtcNow.AddDays(6),
+                SigningCredentials = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256Signature)
             };
 
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -64,11 +62,10 @@ namespace MyFirstCoreApp.Services
 
             return tokenStr;
         }
-      
 
-        public string GetTokenClaims()
+        public string? GetTokenClaims()
         {
-            string tokenString = Request.Headers["Authorization"];
+            string? tokenString = Request?.Headers["Authorization"];
             tokenString ??= "";
             tokenString = tokenString.Trim();
 
@@ -84,13 +81,13 @@ namespace MyFirstCoreApp.Services
                 tokenHandler.ValidateToken(accesToken, TokenValidationParameters, out var securityToken);
                 JwtSecurityToken jwtToken = ((JwtSecurityToken)securityToken);
 
-                return jwtToken.Claims.ToList().FirstOrDefault(claim => claim.Type == TokenPrimaryKey)?.Value;
+                return jwtToken.Claims.ToList().FirstOrDefault(claim => claim.Type == "UserId")?.Value;
             }
             catch (Exception ex)
             {
                 throw new Exception($"JwtService Error TokenClaims  Invalid Token - {ex.Message}");
             }
-        }       
-
+        }
     }
+
 }

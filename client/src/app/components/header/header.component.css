@@ -1,0 +1,56 @@
+.main{
+    display: flex;
+    padding: 1% 1.5%;
+    direction: rtl;
+
+}
+.category{
+    display: flex;
+    width: 100%;
+}
+.language{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+a{
+    text-decoration: none;
+    color: #01278c;
+    color: #06226d;
+}
+.title{
+    padding: 2%;
+    display: flex;
+}
+.title p{
+    font-size: 1.3em;
+    color: #06226d;
+}
+.logo{
+    display: grid;
+    align-items: center;
+    width: -webkit-fill-available;
+    justify-content: center;
+}
+.hiden{
+    display: none;
+}
+.Subjects:hover  .hiden{
+    display: grid;
+    position: absolute;
+    background: white;
+  
+    z-index: 5;
+    text-align: start;
+    box-shadow: 0 2px 18px #01278c21;
+    border-radius: 12px;
+    border: none;
+    font-size: 14px;
+    margin-top: 30px;
+}
+.hiden div{
+    padding: 3px 9px;
+    cursor: pointer;
+    font-size: 1.1em;
+
+}
