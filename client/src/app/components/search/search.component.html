@@ -1,0 +1,13 @@
+<div class="all">
+
+    <div class="header">
+        
+        <p-splitButton [label]="SerchBy" [model]="items"  styleClass="p-button-raised p-button-outlined mr-2 mb-2"></p-splitButton>
+    </div>
+    <div class="footer">
+        <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="10" [totalRecords]="120" [rowsPerPageOptions]="[10, 20, 30]"></p-paginator>
+        
+    </div>
+</div>
+
+

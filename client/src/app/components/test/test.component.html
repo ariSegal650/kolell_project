@@ -1,0 +1,8 @@
+<div class="title" (mouseenter)="openSubtitles()" (mouseleave)="closeSubtitles()">
+    Main Title
+    <div class="sub-titles" [ngClass]="{'open': showSubtitles}">
+      <div class="sub-title">Sub Title 1</div>
+      <div class="sub-title">Sub Title 2</div>
+      <div class="sub-title">Sub Title 3</div>
+    </div>
+  </div>

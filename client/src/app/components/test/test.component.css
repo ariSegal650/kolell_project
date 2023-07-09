@@ -1,0 +1,25 @@
+.title {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .sub-titles {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-top: none;
+    transition: all 0.3s ease;
+  }
+  
+  .sub-titles.open {
+    display: block;
+  }
+  
+  .sub-title {
+    padding: 5px 0;
+  }
+  

@@ -11,7 +11,7 @@ namespace LogicServices.EO
         public string user_group { get; set; }=string.Empty;
         public string email_address { get; set; }=string.Empty;
         public string user_name { get; set; }=string.Empty;
-        public string password { get; set; }=string.Empty;
+        public string password { get; set; }=string.Empty; 
         public string? passwordSalt { get; set; }
         public string? first_name { get; set; }
         public string? last_name { get; set; }

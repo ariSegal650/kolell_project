@@ -1,0 +1,168 @@
+/* global */
+p-button::ng-deep button {
+    background-color: #fff !important;
+}
+
+.buttonL {
+    position: absolute;
+    z-index: 2;
+    align-self: center;
+    justify-self: end;
+}
+
+.buttonL p-button {
+    position: relative;
+    right: 33px;
+}
+
+.buttonR {
+    position: absolute;
+    z-index: 2;
+    align-self: center;
+}
+
+.buttonR p-button {
+    position: relative;
+    left: 33px;
+}
+.title p{
+    font-size: 1.5em;
+}
+.title {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 15px;
+    align-items: center;
+}
+
+/*  */
+.app {
+    display: grid;
+    width: 100%;
+    margin-top: 200px;
+}
+
+.main {
+    width: 85%;
+    overflow: hidden;
+    justify-self: center;
+}
+
+.latest {
+    display: grid;
+    /* overflow: auto; */
+    direction: rtl;
+}
+
+.scroll {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.latestSection .card {
+    margin: 10px;
+    padding: 2px;
+    width: 200px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 1px 2px 5px;
+}
+
+.latestSection .img {
+    position: relative;
+}
+
+.latestSection .img img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.latestSection .img .bottom {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    width: 95%;
+}
+
+.latestSection .img p {
+    margin-right: 2%;
+}
+
+.img mat-icon {
+    position: absolute;
+    left: 0;
+}
+
+/* spekers */
+.speakers{
+    margin-top: 70px;
+}
+.speakers .img {
+    width: 100px
+}
+
+.circle-image {
+    border-radius: 50%;
+    width: 100%;
+}
+
+.cardSpeakers {
+    display: flex;
+    width: 249px;
+    align-items: center;
+    padding: 3px 6px;
+    justify-content: space-between;
+    margin: 7px;
+    border-radius: 15px;
+    box-shadow: 1px 2px 5px;
+}
+
+.grid {
+    display: grid;
+    direction: rtl;
+
+}
+
+/* .speakers .buttonL{
+    position: absolute;
+    z-index: 2;
+    align-self: center;
+}
+.speakers .buttonR{
+    position: absolute;
+    z-index: 2;
+    align-self: center;
+    justify-self: end;
+} */
+
+/* recommended */
+.recommended .img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.recommended {
+    display: flex;
+    margin-top: 75px;
+    justify-content: space-between;
+}
+
+.recommended .card {
+    border: black solid 1px;
+    border-radius: 15px;
+    padding: 8px;
+    height: 250px;
+    width: 250px;
+}
+
+.recommended .content {
+    justify-items: center;
+    display: grid;
+    font-size: 1.5em;
+}
+
+.recommended .content p {
+    height: 100%;
+    align-content: end;
+    display: grid;
+}
