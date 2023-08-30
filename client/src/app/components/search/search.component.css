@@ -1,18 +1,63 @@
-.all{
+.all {
     margin-top: 50px;
     display: grid;
     height: 100vh;
 }
-.header{
+
+.header {
     height: fit-content;
     justify-self: end;
     margin: 0 15px;
 }
-.footer{
+
+.footer {
     display: grid;
     /* align-items: center; */
     align-self: end;
 }
-p-splitbutton::ng-deep .p-button-raised::ng-deep p-tieredmenu::ng-deep .ng-trigger{
+
+p-splitbutton::ng-deep .p-button-raised::ng-deep p-tieredmenu::ng-deep .ng-trigger {
     left: -30px !important;
-} 
+}
+
+.main {
+    direction: rtl;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    width: 60%;
+    margin: 0 auto;
+    box-shadow: 1px 2px 5px;
+}
+
+.card-image {
+    flex: 1;
+    max-width: 150px;
+    margin-right: 10px;
+}
+
+.card-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-text {
+    flex: 2;
+    padding: 0 10px;
+    color: #333;
+}
+
+.card-text p {
+    margin-bottom: 10px;
+}
+
+.card-text p:last-child {
+    margin-bottom: 0;
+}

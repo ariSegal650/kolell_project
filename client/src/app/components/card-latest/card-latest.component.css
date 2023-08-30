@@ -1,0 +1,32 @@
+p-card ::ng-deep .p-card .p-card-body{
+    padding: 1rem;
+    direction: rtl;
+}
+p-card ::ng-deep .p-card .p-card-title{
+    font-size: 1rem;
+    font-weight: 500;
+}
+p-card ::ng-deep .p-card  .p-card-subtitle{
+    height: 46px;
+    overflow: hidden;
+}
+p-card ::ng-deep .p-card .p-card-content{
+    display: none;
+}
+
+p-carousel ::ng-deep .p-carousel .p-carousel-indicators{
+display: none;
+}
+p-carousel ::ng-deep .p-carousel-items-content{
+    padding: 10px 0;
+}
+p-card{
+    margin: 20px 0;
+}
+.eliItem{
+    transition: 0.3s;
+}
+.eliItem:hover{
+    transition: 0.3s;
+    scale: 1.05 ;
+}

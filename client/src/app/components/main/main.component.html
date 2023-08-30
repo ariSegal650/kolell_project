@@ -6,93 +6,19 @@
                 <p-button label="עוד שיעורי תורה חדשים" styleClass="p-button-outlined"></p-button>
                 <p>שיעורי תורה חדשים</p>
             </div>
+            <app-card-latest></app-card-latest>
 
-            <div class="latest">
-                <div class="buttonL">
-
-                    <p-button icon="pi pi-chevron-left" styleClass="p-button-outlined"
-                        (click)="scrollLeft()"></p-button>
-                </div>
-                <div class="scroll">
-
-                    <div class="card" *ngFor="let item of list_LatestVideos"
-                        [style.transform]="'translateX(' + scrollPosition + 'px)'">
-                        <div class="img">
-                            <img src="../../../assets/shutterstock.jpg" alt="">
-                            <div class="bottom">
-                                <p>{{item.video_length}}</p>
-                                <mat-icon>play_circle_outline</mat-icon>
-                            </div>
-                        </div>
-                        <div class="speaker">
-                            <p>{{item.description}}</p>
-                        </div>
-                        <div class="name">
-                            <p>{{item.tags}}</p>
-                        </div>
-                        <div class="channel">
-                            <p>{{item.channel}}</p>
-                        </div>
-                        <div class="channel">
-                            <p>{{item.date_uploaded}}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="buttonR" *ngIf="left_button">
-                    <p-button icon="pi pi-chevron-right" styleClass="p-button-outlined"
-                        (click)="scrollRight()"></p-button>
-                </div>
-
-
-            </div>
         </div>
 
         <div class="speakers">
             <div class="title">
-                <button> לעוד שיעורי תורה חדשים</button>
+                <p-button label="לכל הרבנים" styleClass="p-button-outlined"></p-button>
                 <p>רבנים</p>
             </div>
-            <div class="grid">
-                <div class="buttonL">
 
-                    <p-button icon="pi pi-chevron-left" styleClass="p-button-outlined"
-                        (click)="scrollLeft_speakers()"></p-button>
-                </div>
-                <div class="scroll">
-                    <div *ngFor="let item of listSpekers;" [style.transform]="'translateX(' + scrollPosition_speakers + 'px)'">
-                        <div class="cardSpeakers">
-                            <div class="img">
-                                <img src="{{item[0].img}}" alt="Image" class="circle-image">
-                            </div>
-                            <div class="content">
-                                <div>
-                                    <p class="name">{{item[0].full_name}}</p>
-                                    <p class="num">{{item[0].number_views}}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cardSpeakers">
-                            <div class="img">
-                                <img src="{{item[1].img}}" alt="Image" class="circle-image">
-                            </div>
-                            <div class="content">
-                                <div>
-                                    <p class="name">{{item[1].full_name}}</p>
-                                    <p class="num">{{item[1].number_views}}</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="buttonR" *ngIf="left_button_sp">
-                    <p-button icon="pi pi-chevron-right" styleClass="p-button-outlined"
-                        (click)="scrollRight_speakers()"></p-button>
-                </div>
-            </div>
-
-
+            <app-speakers-card></app-speakers-card>
         </div>
+
         <div class="recommended">
             <div class="card" *ngFor="let item of listRecommended">
                 <div class="img">

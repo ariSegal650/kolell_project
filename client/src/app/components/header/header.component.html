@@ -1,31 +1,29 @@
 <div class="main">
 
     <div class="category">
-       
-           
 
-        <div class="spekers title">
+
+
+        <div class="Subjects spekers title">
             <p>רבנים</p><mat-icon>keyboard_arrow_down</mat-icon>
             <div class="hiden">
-                <!-- <div *ngFor="let item of items"></div> -->
-                5555
+                <div>
+                    <div *ngFor="let item of speakers">
+                        {{item.name}}
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="Subjects title">
             <p>נושאים</p><mat-icon>keyboard_arrow_down</mat-icon>
-            <div class="hiden">
-                <div>פרשת השבוע</div>
-                <div>הלכה</div>
-                <div>התוועדויות</div>
-                <div>תניא</div>
-                <div>תורה אור</div>
-                <div> תפילה</div>
-                <div> ליקוטי תורה</div>
-                <div> היום יום <span>></span></div>
-
-
-                <!-- <div *ngFor="let item of SubjectsList">{{item.channel_name}}</div> -->
+            <div class="hiden channels">
+                <div>
+                    <div *ngFor="let item of channels">
+                        {{item.title}}
+                    </div>
+                </div>
+              
             </div>
         </div>
 
@@ -33,7 +31,24 @@
     <div class="logo">
         <p>חסידות נט</p>
     </div>
-    <div class="language">
-        <a href=""> עברית<mat-icon>language</mat-icon></a>
+    <div class="left">
+
+        <div class="language leftSt">
+            <a href="">
+                <div>
+                    <mat-icon>language</mat-icon>
+                    <p>עברית</p>
+                </div>
+            </a>
+        </div>
+        <div class="personal leftSt">
+            <a href="">
+                <div>
+                    <mat-icon>person</mat-icon>
+                    <p>כניסה </p>
+                </div>
+            </a>
+        </div>
     </div>
+
 </div>

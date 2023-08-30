@@ -2,6 +2,7 @@ using LogicServices.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Api.DTO;
+using System.Reflection.PortableExecutable;
 
 namespace Api.Controllers
 {
@@ -13,11 +14,26 @@ namespace Api.Controllers
         {
             _dataService = dataService;
         }
+        public void MoveZeroes(int[] nums)
+        {
+            int last = nums.Length-1;
+            for(int i=0; i<nums.Length; i++)
+            {
+                if (nums[i] == 0)
+                {
+                    int temp = nums[last];
+                    nums[last] = nums[i];
+                    nums[i] = temp;
+                    last--;
+                }
+            }
+        }
 
         [HttpGet("test/serch")]
-        public IActionResult test(string serch)
+        public async Task<IActionResult> testAsync(string serch)
         {
-            return Ok(_dataService.test(serch));
+           
+            // return Ok(_dataService.test(serch));
         }
         [HttpGet("GetLastVideos")]
         public IActionResult GetLastVideos()

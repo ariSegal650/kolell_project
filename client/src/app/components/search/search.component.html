@@ -1,13 +1,29 @@
 <div class="all">
 
     <div class="header">
-        
-        <p-splitButton [label]="SerchBy" [model]="items"  styleClass="p-button-raised p-button-outlined mr-2 mb-2"></p-splitButton>
+
+        <p-splitButton [label]="SerchBy" [model]="items"
+            styleClass="p-button-raised p-button-outlined mr-2 mb-2"></p-splitButton>
+    </div>
+    <div class="main">
+        <div class="items" *ngFor="let item of ListVideo">
+
+            <div class="card">
+                <div class="card-image">
+                    <img src="../../../assets/images.png" alt="Image">
+                </div>
+                <div class="card-text">
+                    <p>{{item.description}}</p>
+                    <p>{{item.title}}</p>
+                    <p>{{item.channel}}</p>
+                    <p>{{item.video_length}}</p>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="footer">
-        <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="10" [totalRecords]="120" [rowsPerPageOptions]="[10, 20, 30]"></p-paginator>
-        
+        <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="10" [totalRecords]="120"
+            [rowsPerPageOptions]="[10, 20, 30]"></p-paginator>
+
     </div>
 </div>
-
-

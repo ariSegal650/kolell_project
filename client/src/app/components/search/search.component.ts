@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { video_parameters } from 'src/app/models/video_parameters';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-search',
@@ -14,12 +15,18 @@ export class SearchComponent implements OnInit {
   SerchBy: string = "הכי חדש"
   ListVideo:video_parameters[]=[];
   
-  constructor(private route: ActivatedRoute,) {
+  constructor(private route: ActivatedRoute,private dataService:DataService) {
    
   }
   ngOnInit(): void {
+    this.InitializeItems();
+  }
+  onPageChange(event: any) {
 
+    console.log(event);
 
+  }
+  InitializeItems(){
     this.items = [
       {
         label: "שם הרב(א-ת)",
@@ -45,11 +52,6 @@ export class SearchComponent implements OnInit {
           this.SerchBy = "מהישן לחדש"
         }
       }];
-  }
-  onPageChange(event: any) {
-
-    console.log(event);
-
   }
 
 }

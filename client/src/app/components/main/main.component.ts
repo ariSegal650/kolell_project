@@ -15,7 +15,7 @@ export class MainComponent implements OnInit {
 
   //hidden right button in latestvideosection
   left_button = false
-
+  right_button =true;
   scrollPosition = 0;
 
   left_button_sp=false;
@@ -33,7 +33,6 @@ export class MainComponent implements OnInit {
     
     this._DataService.GetLatestVideos().subscribe({
       next: (value) => {
-
         console.log(this.list_LatestVideos);
         this.list_LatestVideos = value as video_parameters[]
       },
@@ -47,13 +46,16 @@ export class MainComponent implements OnInit {
 console.log(maxScrollPosition,this.scrollPosition,scrollContainer.scrollWidth);
 
     if (maxScrollPosition <= scrollContainer.scrollWidth / 2) {
-      this.scrollPosition = 0;
+      //this.scrollPosition = Math.max(this.scrollPosition, 0);
+      this.right_button=false;
     }
     this.animateScroll("latest");
   }
   scrollRight() {
     this.scrollPosition -= 420;
     this.scrollPosition = Math.max(this.scrollPosition, 0);
+    this.right_button=true;
+    
     this.animateScroll("latest"); // Call the animation method after updating the scroll position
   }
   animateScroll(section:string) {

@@ -8,16 +8,18 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class HeaderComponent implements OnInit{
 
-  /**
-   *
-   */
+  channels:any[]=[];
+  speakers:any[]=[];
   constructor(private data:DataService) {
   
-    
   }
-  SubjectsList?:any;
   ngOnInit(): void {
-   
+    this.data.getChannels().subscribe(Data => {
+      this.channels = Data;
+    });
+    this.data.getspeakers().subscribe(Data => {
+      this.speakers = Data;
+    });
    
   }
 }

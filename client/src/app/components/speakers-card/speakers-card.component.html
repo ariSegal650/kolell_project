@@ -1,0 +1,75 @@
+<p-carousel [value]="listSpekers" [numVisible]="4" [circular]="false" [responsiveOptions]="responsiveOptions" [page]="2">
+
+    <ng-template let-item pTemplate="item">
+        <div class="aa">
+
+            <div class="cardSpeakers">
+                <div class="content">
+                    <div>
+                        <p class="name">{{item[0].full_name}}</p>
+                        <p class="num">{{item[0].number_views}}</p>
+                    </div>
+                </div>
+                <div class="img">
+                    <img [src]="item[0].img" alt="Image" class="circle-image">
+                </div>
+            </div>
+            <div class="cardSpeakers">
+            <div class="content">
+                <div>
+                    <p class="name">{{item[1].full_name}}</p>
+                    <p class="num">{{item[1].number_views}}</p>
+                </div>
+            </div>
+            <div class="img">
+                <img [src]="item[1].img" alt="Image" class="circle-image">
+            </div>
+        </div>
+    </div>
+    </ng-template>
+</p-carousel>
+
+
+
+
+
+
+<!-- <div class="grid">
+    <div class="buttonL">
+
+        <p-button icon="pi pi-chevron-left" styleClass="p-button-outlined"
+            (click)="scrollLeft_speakers()"></p-button>
+    </div>
+    <div class="scroll">
+        <div *ngFor="let item of listSpekers;"
+            [style.transform]="'translateX(' + scrollPosition_speakers + 'px)'">
+            <div class="cardSpeakers">
+                <div class="img">
+                    <img src="{{item[0].img}}" alt="Image" class="circle-image">
+                </div>
+                <div class="content">
+                    <div>
+                        <p class="name">{{item[0].full_name}}</p>
+                        <p class="num">{{item[0].number_views}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cardSpeakers">
+                <div class="img">
+                    <img src="{{item[1].img}}" alt="Image" class="circle-image">
+                </div>
+                <div class="content">
+                    <div>
+                        <p class="name">{{item[1].full_name}}</p>
+                        <p class="num">{{item[1].number_views}}</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="buttonR" *ngIf="left_button_sp">
+        <p-button icon="pi pi-chevron-right" styleClass="p-button-outlined"
+            (click)="scrollRight_speakers()"></p-button>
+    </div>
+</div> -->

@@ -13,6 +13,10 @@ import { ButtonModule } from 'primeng/button';
 import { SearchComponent } from './components/search/search.component';
 import { PaginatorModule } from 'primeng/paginator';
 import { SplitButtonModule } from 'primeng/splitbutton';
+import { CardLatestComponent } from './components/card-latest/card-latest.component';
+import { CardModule } from 'primeng/card';
+import { CarouselModule } from 'primeng/carousel';
+import { SpeakersCardComponent } from './components/speakers-card/speakers-card.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +25,8 @@ import { SplitButtonModule } from 'primeng/splitbutton';
     TestComponent,
     HeaderComponent,
     SearchComponent,
+    CardLatestComponent,
+    SpeakersCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +36,9 @@ import { SplitButtonModule } from 'primeng/splitbutton';
     MatIconModule,
     PaginatorModule,
      BrowserAnimationsModule,
-     SplitButtonModule
+     SplitButtonModule,
+     CardModule,
+     CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
