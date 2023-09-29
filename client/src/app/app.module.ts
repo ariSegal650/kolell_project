@@ -17,7 +17,10 @@ import { CardLatestComponent } from './components/card-latest/card-latest.compon
 import { CardModule } from 'primeng/card';
 import { CarouselModule } from 'primeng/carousel';
 import { SpeakersCardComponent } from './components/speakers-card/speakers-card.component';
-
+import { RecommendedCardComponent } from './components/recommended-card/recommended-card.component';
+import { PlayVideoComponent } from './components/play-video/play-video.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { TableModule } from 'primeng/table';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +30,9 @@ import { SpeakersCardComponent } from './components/speakers-card/speakers-card.
     SearchComponent,
     CardLatestComponent,
     SpeakersCardComponent,
+    RecommendedCardComponent,
+    PlayVideoComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +44,8 @@ import { SpeakersCardComponent } from './components/speakers-card/speakers-card.
      BrowserAnimationsModule,
      SplitButtonModule,
      CardModule,
-     CarouselModule
+     CarouselModule,
+     TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

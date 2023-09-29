@@ -1,8 +1,11 @@
 namespace Api.DTO
 {
-    public class SearchByCategoryDTO
+    public class SearchByChannelDTO
     {
-        public int? Category { get; set; }=null;
-        public int? SpeakerId { get; set; }=null;
+        public int Category { get; set; }
+    }
+     public class SearchBySpeakerDTO
+    {
+        public int SpeakerId { get; set; }
     }
 }

@@ -1,0 +1,9 @@
+.card{
+    margin: 0 10px;
+}
+@media(width<760px)
+{
+    p-carousel{
+        display: none;
+    }
+}

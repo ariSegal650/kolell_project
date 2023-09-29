@@ -23,10 +23,11 @@ p-carousel ::ng-deep .p-carousel-items-content{
 p-card{
     margin: 20px 0;
 }
-.eliItem{
+.style-card{
     transition: 0.3s;
 }
-.eliItem:hover{
+.style-card:hover{
     transition: 0.3s;
     scale: 1.05 ;
+    cursor: pointer;
 }

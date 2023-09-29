@@ -28,15 +28,8 @@ export class MainComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    this.initializeSpeakers();
     this.initializeRecommended();
     
-    this._DataService.GetLatestVideos().subscribe({
-      next: (value) => {
-        console.log(this.list_LatestVideos);
-        this.list_LatestVideos = value as video_parameters[]
-      },
-    })
   }
 
   scrollLeft() {
@@ -117,68 +110,5 @@ console.log(maxScrollPosition,this.scrollPosition,scrollContainer.scrollWidth);
 
       ]
   }
-  initializeSpeakers() {
-    this.listSpekers = [
-      [{
-        img: "../../../assets/images.png",
-        number_views: 55,
-        full_name: "r miilec",
-        channel_id: 589
-      },
-      {
-        img: "../../../assets/images.png",
-        number_views: 556,
-        full_name: "r miilec",
-        channel_id: 589
-      }],
-      [{
-        img: "../../../assets/images.png",
-        number_views: 557,
-        full_name: "r miilec",
-        channel_id: 589
-      },
-      {
-        img: "../../../assets/images.png",
-        number_views: 558,
-        full_name: "r miilec",
-        channel_id: 589
-      }],
-      [{
-        img: "../../../assets/images.png",
-        number_views: 55,
-        full_name: "r miilec",
-        channel_id: 589
-      },
-      {
-        img: "../../../assets/images.png",
-        number_views: 556,
-        full_name: "r miilec",
-        channel_id: 589
-      }],
-      [{
-        img: "../../../assets/images.png",
-        number_views: 557,
-        full_name: "r miilec",
-        channel_id: 589
-      },
-      {
-        img: "../../../assets/images.png",
-        number_views: 558,
-        full_name: "r miilec",
-        channel_id: 589
-      }],
-      [{
-        img: "../../../assets/images.png",
-        number_views: 557,
-        full_name: "r miilec",
-        channel_id: 589
-      },
-      {
-        img: "../../../assets/images.png",
-        number_views: 558,
-        full_name: "r miilec",
-        channel_id: 589
-      }]
-    ]
-  }
+  
 }

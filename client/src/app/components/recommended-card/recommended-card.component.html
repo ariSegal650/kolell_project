@@ -1,0 +1,17 @@
+<p-carousel [value]="list_recommended" [numVisible]="4" [numScroll]="3" [circular]="false" [showIndicators]="false" [showNavigators]="false"
+[responsiveOptions]="responsiveOptions"
+>
+
+    <ng-template let-item pTemplate="item">
+        <div class="card">
+            <p-card header="{{item.name}} ">
+                <ng-template pTemplate="header">
+                    <img alt="Card" src="../../../assets/images.png" />
+                </ng-template>
+
+            </p-card>
+        </div>
+    </ng-template>
+    
+</p-carousel>
+

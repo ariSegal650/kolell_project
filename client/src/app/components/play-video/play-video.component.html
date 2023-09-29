@@ -1,0 +1,29 @@
+<div class="marginBase">
+
+    <div class="main">
+        <div class="title">
+            <p>{{item.title}}</p>
+            <p>{{item.tags}}</p>
+        </div>
+        <div class="video">
+            <video #videoPlayer width="640" height="360" controls *ngIf="item?.video_id">
+                <source [src]="'http://video.chasidut.net/uploads/' + item.video_id + '.mp4'" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    <div class="right_side">
+        <div class="description">
+            <p>{{item.description}}</p>
+            <p>{{item.date_uploaded |date:'MMM d, y'}}</p>
+
+        </div>
+        <div class="listSuggestions">
+            <div *ngFor="let item of listSuggestions">
+                {{item.tags}}
+                {{item.description}}
+                
+            </div>
+        </div>
+    </div>
+    
+</div>

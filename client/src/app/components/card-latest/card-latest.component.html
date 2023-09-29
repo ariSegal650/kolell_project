@@ -2,7 +2,7 @@
     [responsiveOptions]="responsiveOptions">
 
     <ng-template let-item pTemplate="item">
-        <div class="eliItem">
+        <div class="style-card" (click)="RouteToVideo(item)">
             <p-card header="{{item.description}} " subheader="{{item.tags}}" [style]="{ width: '220px' }">
                 <ng-template pTemplate="header">
                     <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
@@ -18,25 +18,3 @@
     
 </p-carousel>
 
-<!-- <div class="card" *ngFor="let item of list_LatestVideos" [style.transform]="'translateX(' + scrollPosition + 'px)'">
-    <div class="img">
-        <img src="../../../assets/shutterstock.jpg" alt="">
-        <div class="bottom">
-            <p>{{item.video_length}}</p>
-            <mat-icon>play_circle_outline</mat-icon>
-        </div>
-    </div>
-    <div class="speaker">
-        <p>{{item.description}}</p>
-    </div>
-    <div class="name">
-        <p>{{item.tags}}</p>
-    </div>
-    <div class="channel">
-        <p>{{item.channel}}</p>
-    </div>
-    <div class="channel">
-        <p>{{item.date_uploaded}}</p>
-    </div>
-</div>
-</div> -->

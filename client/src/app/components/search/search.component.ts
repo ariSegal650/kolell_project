@@ -13,12 +13,16 @@ export class SearchComponent implements OnInit {
   first: number = 0
   items: MenuItem[] | undefined;
   SerchBy: string = "הכי חדש"
-  ListVideo:video_parameters[]=[];
-  
-  constructor(private route: ActivatedRoute,private dataService:DataService) {
-   
+  ListVideo: video_parameters[] = [];
+
+  constructor(private route: ActivatedRoute, private dataService: DataService) {
+
   }
   ngOnInit(): void {
+    const type = this.route.snapshot.paramMap.get('type') as string
+    console.log(type);
+    this.LoadVideos(type);
+
     this.InitializeItems();
   }
   onPageChange(event: any) {
@@ -26,7 +30,7 @@ export class SearchComponent implements OnInit {
     console.log(event);
 
   }
-  InitializeItems(){
+  InitializeItems() {
     this.items = [
       {
         label: "שם הרב(א-ת)",
@@ -54,5 +58,14 @@ export class SearchComponent implements OnInit {
       }];
   }
 
+  LoadVideos(type:string) {
+    if(type=="new"){
+     this.dataService.GetLatestVideos().subscribe(v=>
+      this.ListVideo=v as video_parameters[]
+      );
+    }
+  }
 }
+
+
 

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { video_parameters } from 'src/app/models/video_parameters';
 import { DataService } from 'src/app/services/data.service';
 
@@ -8,18 +9,16 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./card-latest.component.css']
 })
 export class CardLatestComponent implements OnInit {
-  
+
   list_LatestVideos: video_parameters[] = [];
   responsiveOptions: any[] | undefined;
-  constructor(private _DataService: DataService) { }
+  constructor(private _DataService: DataService,private rout:Router) { }
   ngOnInit(): void {
-    // this._DataService.GetLatestVideos().subscribe({
-    //   next: (value) => {
+    this._DataService.GetLatestVideos().subscribe(value=>{
+    
+        this.list_LatestVideos = value as video_parameters[]
+    })
 
-    //     console.log(this.list_LatestVideos);
-    //     this.list_LatestVideos = value as video_parameters[]
-    //   },
-    // })
 
     this.responsiveOptions = [
       {
@@ -44,9 +43,10 @@ export class CardLatestComponent implements OnInit {
       }
     ];
   }
-
-
-
+  RouteToVideo(item:video_parameters){
+    this._DataService.updateCurrentVideo(item);
+    this.rout.navigateByUrl("/video");
+  }
 
 }
 

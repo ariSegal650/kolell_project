@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Api.DTO;
 using System.Reflection.PortableExecutable;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Api.Controllers
 {
@@ -14,26 +15,10 @@ namespace Api.Controllers
         {
             _dataService = dataService;
         }
-        public void MoveZeroes(int[] nums)
-        {
-            int last = nums.Length-1;
-            for(int i=0; i<nums.Length; i++)
-            {
-                if (nums[i] == 0)
-                {
-                    int temp = nums[last];
-                    nums[last] = nums[i];
-                    nums[i] = temp;
-                    last--;
-                }
-            }
-        }
-
         [HttpGet("test/serch")]
         public async Task<IActionResult> testAsync(string serch)
         {
-           
-            // return Ok(_dataService.test(serch));
+            return Ok(_dataService.test(serch));
         }
         [HttpGet("GetLastVideos")]
         public IActionResult GetLastVideos()
@@ -43,7 +28,8 @@ namespace Api.Controllers
         [HttpGet("GetAllSpeakers")]
         public IActionResult GetAllSpeakers()
         {
-            return Ok(_dataService.GetSpeakers());
+            var list = _dataService.GetSpeakers();
+            return list.IsNullOrEmpty() ? BadRequest() : Ok(list);
         }
         [HttpGet("GetAllChannles")]
         public IActionResult GetAllChannles()
@@ -51,20 +37,16 @@ namespace Api.Controllers
             return Ok(_dataService.GetAllChannles());
         }
 
-        [HttpPost("GetVideosByCategory")]
-        public IActionResult GetVideosByCategory([FromBody] SearchByCategoryDTO s)
+        [HttpPost("GetVideosByChannel")]
+        public IActionResult GetVideosByChannel([FromBody] SearchByChannelDTO s)
         {
-            if (s.Category is null) { return BadRequest(); }
-
-            return Ok(_dataService.GetVideosByCategoryService(s.Category.Value));
+            return Ok(_dataService.GetVideosByChannel(s.Category));
         }
 
         [HttpPost("GetVideosBySpeaker")]
-        public IActionResult GetVideosBySpeaker([FromBody] SearchByCategoryDTO s)
+        public IActionResult GetVideosBySpeaker([FromBody] SearchBySpeakerDTO s)
         {
-            if (s.SpeakerId is null) { return BadRequest(); }
-
-            return Ok(_dataService.GetVideosBySpeaker(s.SpeakerId.Value));
+            return Ok(_dataService.GetVideosBySpeaker(s.SpeakerId));
         }
     }
 }

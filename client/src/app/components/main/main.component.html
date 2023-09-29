@@ -3,7 +3,7 @@
 
         <div class="latestSection">
             <div class="title">
-                <p-button label="עוד שיעורי תורה חדשים" styleClass="p-button-outlined"></p-button>
+                <p-button label="עוד שיעורי תורה חדשים" styleClass="p-button-outlined" routerLink="search/new"></p-button>
                 <p>שיעורי תורה חדשים</p>
             </div>
             <app-card-latest></app-card-latest>
@@ -12,7 +12,7 @@
 
         <div class="speakers">
             <div class="title">
-                <p-button label="לכל הרבנים" styleClass="p-button-outlined"></p-button>
+                <p-button label="לכל הרבנים" styleClass="p-button-outlined" routerLink="search/speakers"></p-button>
                 <p>רבנים</p>
             </div>
 
@@ -20,13 +20,7 @@
         </div>
 
         <div class="recommended">
-            <div class="card" *ngFor="let item of listRecommended">
-                <div class="img">
-                    <img src="{{item.img}}" alt="Image" class="img">
-                </div>
-                <div class="content">
-                    <p>{{item.name}}</p>
-                </div>
-            </div>
+           <app-recommended-card></app-recommended-card>
         </div>
+        <div style="margin: 20px 0;"></div>
     </div>

@@ -1,14 +1,13 @@
-/* global */
-
-
-/* spekers */
-.cardSpeakers{
-    margin-top: 70px;
+a{
+    text-decoration: none;
 }
+a:hover .cardSpeakers{
+    box-shadow: 1px 2px 13px black;
+}
+/* spekers */
 .cardSpeakers .img {
     width: 100px
 }
-
 .circle-image {
     border-radius: 50%;
     width: 100%;
@@ -16,16 +15,17 @@
 
 .cardSpeakers {
     display: flex;
-    width: 249px;
+    /* width: 249px; */
     align-items: center;
     padding: 3px 6px;
     justify-content: space-between;
     margin: 7px;
     border-radius: 15px;
-    box-shadow: 1px 2px 5px;
+    box-shadow: 1px 2px 5px black;
+    height: 100px;
 }
 
-.grid {
+.grid { 
     display: grid;
     direction: rtl;
 
@@ -33,10 +33,9 @@
 .content{
     width: 100%;
     text-align: end;
-    padding: 0.9rem;
 }
 .cardSpeakers .content p:first-child {
-    /* Your styles here */
+
     font-size: 1.5rem;
     color: #01278c;
   }
